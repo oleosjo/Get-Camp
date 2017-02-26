@@ -1,0 +1,57 @@
+{{!-- <div class="ui three column grid">
+  <div class="column">
+    <div class="ui segment">
+      <ul>
+        {{model._description}}
+        <hr>
+        {{#each model.amenity as |amenity|}}
+          <li>{{amenity._name}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="column"> --}}
+    <div class="ui segment">
+      {{campground-map contractCode=model._contractID parkId=model._facilityID}}
+    </div>
+  {{!-- </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui two column grid">
+        {{#each model.photo as |photo|}}
+          <div class="column"><img src="http://reserveamerica.com{{photo._realUrl}}"></div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div> --}}
+
+
+
+
+{{!-- _alert
+_contractID
+_description
+_drivingDirection
+_facilitiesDescription
+_facility
+_facilityID
+_favorite
+_fullReservationUrl
+_importantInformation
+_latitude
+_listingOnly
+_longitude
+_nearbyAttrctionDescription
+_note
+_orientationDescription
+_recreationDescription
+_regionName
+_reservationUrl
+_webURL
+address
+amenity
+bulletin
+contact
+informationLink
+photo --}}

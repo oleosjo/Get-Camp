@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'get-camp',
+    podModulePrefix: 'get-camp/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

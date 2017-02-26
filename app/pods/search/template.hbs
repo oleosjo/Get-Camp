@@ -1,0 +1,12 @@
+<div class="ui segment">
+  <table class="ui celled table">
+    <tbody>
+      {{#each model as |campground|}}
+      <tr>
+        <td><img src="http://reserveamerica.com{{campground.photoSmall}}"/></td>
+        <td>{{#link-to 'detail' campground._contractID campground.id}}{{campground.name}}{{/link-to}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+import DS from 'ember-data';
+
+export default DS.Model.extend({  
+  _alert : DS.attr('string'),
+  _contractID : DS.attr('string'),
+  _description : DS.attr('string'),
+  _drivingDirection : DS.attr('string'),
+  _facilitiesDescription : DS.attr('string'),
+  _facility : DS.attr('string'),
+  _facilityID : DS.attr('string'),
+  _favorite : DS.attr('string'),
+  _fullReservationUrl : DS.attr('string'),
+  _importantInformation : DS.attr('string'),
+  _latitude : DS.attr('string'),
+  _listingOnly : DS.attr('string'),
+  _longitude : DS.attr('string'),
+  _nearbyAttrctionDescription : DS.attr('string'),
+  _note : DS.attr('string'),
+  _orientationDescription : DS.attr('string'),
+  _recreationDescription : DS.attr('string'),
+  _regionName : DS.attr('string'),
+  _reservationUrl : DS.attr('string'),
+  _webURL : DS.attr('string'),
+  address : DS.attr(),
+  amenity : DS.attr(),
+  bulletin : DS.attr(),
+  contact : DS.attr(),
+  informationLink : DS.attr(),
+  photo : DS.attr()
+});

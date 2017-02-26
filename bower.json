@@ -1,5 +1,7 @@
 {
   "name": "get-camp",
   "dependencies": {
+    "semantic-ui": "^2.2.9",
+    "leaflet": "^1.0.0"
   }
 }
