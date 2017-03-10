@@ -11,6 +11,9 @@ export default DS.Model.extend({
   _mapx: DS.attr('string'),
   _mapy: DS.attr('string'),
   _sitePhoto: DS.attr('string'),
+  photoLarge: Ember.computed('_sitePhoto', function() {
+      return this.get('_sitePhoto').replace('180x120.jpg', '540x360.jpg');
+    }),
   _sitesWithAmps: DS.attr('string'),
   _sitesWithPetsAllowed: DS.attr('string'),
   _sitesWithSewerHookup: DS.attr('string'),

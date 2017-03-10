@@ -11,9 +11,9 @@
     </div>
   </div>
   <div class="column"> --}}
-    <div class="ui segment">
-      {{campground-map contractCode=model._contractID parkId=model._facilityID}}
-    </div>
+
+  {{campground-map campsites=model.campsites contractCode=model.details._contractID parkId=model.details._facilityID}}
+
   {{!-- </div>
   <div class="column">
     <div class="ui segment">

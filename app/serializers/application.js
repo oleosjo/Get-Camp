@@ -8,13 +8,15 @@ export default DS.RESTSerializer.extend({
 
     let results = jsonpayload.resultset.result;
 
-    if (!Array.isArray(results)) {
-      results = [results];
+    if (results) {
+      if (!Array.isArray(results)) {
+        results = [results];
+      }
+
+      normalizedPayload[primaryModelClass.modelName] = results;
+    } else {
+      normalizedPayload[primaryModelClass.modelName] = [];
     }
-
-    normalizedPayload[primaryModelClass.modelName] = results;
-
-    console.log(normalizedPayload);
 
     return this._super(store, primaryModelClass, normalizedPayload, id, requestType);
   }
