@@ -1,16 +1,36 @@
 <div class="map-info-box">
   {{#if selectedSite}}
     <div class="image">
-      <img class="ui fluid image" src="http://reserveamerica.com{{selectedSite.photoLarge}}">
+      <a href="#" {{action 'showModal'}}>
+        {{#if selectedSite.photoLarge}}
+          <img class="ui fluid image" src="http://reserveamerica.com{{selectedSite.photoLarge}}">
+        {{else}}
+          <img class="ui fluid image" src="http://placehold.it/540x360">
+        {{/if}}
+        {{!-- {{photo-slider siteId=selectedSite._SiteId contractCode=contractCode parkId=parkId}} --}}
+      </a>
     </div>
-    <h4>{{selectedSite._Site}}</h4>
-    <p class="description">
-      {{selectedSite._SiteType}}
-    </p>
-    {{/if}}
+    <h4 class="ui horizontal divider header">
+      <i class="marker icon"></i>
+      {{selectedSite.loop}}
+    </h4>
+    <h1 class="ui center aligned header">
+      {{selectedSite.site}}
+      <div class="sub header">{{selectedSite.siteType}}</div>
+      <div class="sub header">EL:{{selectedSite.sitesWithAmps}}</div>
+      {{selectedSite.campsiteDetail.proximityToBodyOfWater}}
+    </h1>
+  {{/if}}
 </div>
 <div style="position:absolute; top:0; right:0; bottom:0; width:75%">
   <div id="parkmap">
 
   </div>
 </div>
+
+{{#ui-modal class="basic"}}
+  <div class="header">{{selectedSite.site}}</div>
+  <div class="content">
+    {{photo-slider photos=selectedSite.campsiteDetail.photoUrlsLarge}}
+  </div>
+{{/ui-modal}}

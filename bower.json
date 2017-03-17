@@ -3,6 +3,8 @@
   "dependencies": {
     "semantic-ui": "^2.2.9",
     "leaflet": "^1.0.0",
-    "d3": "3.5.17"
+    "d3": "3.5.17",
+    "slick-carousel": "1.5.8",
+    "owl.carousel": "^2.2.1"
   }
 }

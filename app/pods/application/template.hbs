@@ -1,1 +1,22 @@
-{{outlet}}
+<div class="ui menu" style="margin:0;">
+  <div class="header item">
+  <i class="tree icon"></i>Get Camp
+  </div>
+  <div class="item">
+    <div class="ui icon input">
+      {{input value=searchQuery class="prompt" type="text" placeholder="Search campgrounds..." enter="sendSearch"}}
+      <i class="search icon"></i>
+    </div>
+  </div>
+  {{!-- <div class="item">
+    <div class="ui input">
+      <i class="filter icon"></i>
+       {{input type="checkbox" checked=(mut campsiteFilter.electric)}} Electric Sites
+       {{input type="checkbox" checked=(mut campsiteFilter.nonElectric)}} Non Electric Sites
+       {{input type="checkbox" checked=(mut campsiteFilter.closeToWater)}} Close to Water
+    </div>
+  </div> --}}
+</div>
+<div style="position:relative;">
+  {{outlet}}
+</div>

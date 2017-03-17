@@ -7,6 +7,8 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    AWS_ACCESS_KEY_ID:'AKIAIJCKDDKXOTBEE4AA',
+    AWS_SECRET_ACCESS_KEY: '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',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

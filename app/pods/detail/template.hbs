@@ -11,8 +11,7 @@
     </div>
   </div>
   <div class="column"> --}}
-
-  {{campground-map campsites=model.campsites contractCode=model.details._contractID parkId=model.details._facilityID}}
+  {{campground-map campsiteFilter=application.campsiteFilter campsites=model.campsites contractCode=model.details._contractID parkId=model.details._facilityID}}
 
   {{!-- </div>
   <div class="column">

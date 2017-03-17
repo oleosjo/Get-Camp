@@ -1,0 +1,14 @@
+{{#leaflet-map lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
+  {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+  {{#each campgrounds as |c|}}
+    {{#marker-layer lat=c._latitude lng=c._longitude}}
+      {{#popup-layer popupOpen=(readonly c.isOpen)}}
+        <h4>{{c.name}}</h4>
+        {{#link-to 'detail' c._contractID c.id}}
+          <img class="ui image fluid" src="http://reserveamerica.com{{c.photoLarge}}" alt="{{c.name}}">
+        {{/link-to}}
+      {{/popup-layer}}
+    {{/marker-layer}}
+  {{/each}}
+
+{{/leaflet-map}}

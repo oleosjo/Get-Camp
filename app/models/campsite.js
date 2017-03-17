@@ -1,23 +1,30 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  _Loop: DS.attr('string'),
-  _Maxeqplen: DS.attr('string'),
-  _Maxpeople: DS.attr('string'),
-  _Site: DS.attr('string'),
-  _SiteId: DS.attr('string'),
-  _SiteReserveType: DS.attr('string'),
-  _SiteType: DS.attr('string'),
-  _mapx: DS.attr('string'),
-  _mapy: DS.attr('string'),
-  _sitePhoto: DS.attr('string'),
-  photoLarge: Ember.computed('_sitePhoto', function() {
-      return this.get('_sitePhoto').replace('180x120.jpg', '540x360.jpg');
-    }),
-  _sitesWithAmps: DS.attr('string'),
-  _sitesWithPetsAllowed: DS.attr('string'),
-  _sitesWithSewerHookup: DS.attr('string'),
-  _sitesWithWaterHookup: DS.attr('string'),
-  _sitesWithWaterfront: DS.attr('string'),
+  campsiteDetail: DS.belongsTo('campsite-detail'),
+
+  loop: DS.attr('string'),
+  maxeqplen: DS.attr('string'),
+  maxpeople: DS.attr('string'),
+  site: DS.attr('string'),
+  siteId: DS.attr('string'),
+  siteReserveType: DS.attr('string'),
+  siteType: DS.attr('string'),
+  mapx: DS.attr('string'),
+  mapy: DS.attr('string'),
+  sitePhoto: DS.attr('string'),
+  sitesWithAmps: DS.attr('string'),
+  sitesWithPetsAllowed: DS.attr('string'),
+  sitesWithSewerHookup: DS.attr('string'),
+  sitesWithWaterHookup: DS.attr('string'),
+  sitesWithWaterfront: DS.attr('string'),
+
+  isElectric: Ember.computed('sitesWithAmps', function() {
+    return this.get('sitesWithAmps') !== '';
+  }),
+
+  photoLarge: Ember.computed('sitePhoto', function() {
+    return this.get('sitePhoto').replace('180x120.jpg', '540x360.jpg');
+  }),
 
 });

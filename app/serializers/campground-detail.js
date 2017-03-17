@@ -10,8 +10,6 @@ export default DS.RESTSerializer.extend({
 
     normalizedPayload[primaryModelClass.modelName] = jsonpayload.detailDescription;
 
-    console.log(normalizedPayload);
-
     return this._super(store, primaryModelClass, normalizedPayload, id, requestType);
   }
 });

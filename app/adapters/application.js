@@ -2,7 +2,7 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.RESTAdapter.extend({
-  namespace: 'api',
+  namespace: 'api/v1',
 
   pathForType: function(type) {
     switch (type) {
@@ -10,8 +10,6 @@ export default DS.RESTAdapter.extend({
         return 'campgroundSearch.do';
       case 'campground-detail':
         return 'campgroundDetails.do';
-      case 'campsite':
-        return 'campsiteSearch.do';
     }
   },
 

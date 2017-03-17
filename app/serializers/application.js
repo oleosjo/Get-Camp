@@ -7,6 +7,12 @@ export default DS.RESTSerializer.extend({
     let normalizedPayload = {};
 
     let results = jsonpayload.resultset.result;
+    let resultset = jsonpayload.resultset;
+    delete resultset.result;
+
+    for (var i = 0; i < results.length; i++) {
+      Object.assign(results[i], resultset);
+    }
 
     if (results) {
       if (!Array.isArray(results)) {
@@ -14,6 +20,7 @@ export default DS.RESTSerializer.extend({
       }
 
       normalizedPayload[primaryModelClass.modelName] = results;
+
     } else {
       normalizedPayload[primaryModelClass.modelName] = [];
     }
